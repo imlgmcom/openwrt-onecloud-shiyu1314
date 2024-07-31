@@ -279,4 +279,9 @@ jobs:
            插件：${{ github.event.inputs.CUSTOM_PLUGINS }}
            定制作者：${{ github.event.inputs.OP_author }}
            默认密码：无
+run: |
+  DATE=$(date +'%Y_%m_%d')
+  for f in ${{ env.FIRMWARE }}/*; do
+    mv "$f" "$DATE_$f"
+  done
 
